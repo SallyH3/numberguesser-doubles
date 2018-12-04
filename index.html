@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Number Guesser Doubles</title>
+</head>
+<body>
+  <header class="main-title">
+    <h1 class="main-title">
+      <span class="number-title">NUMBER</span>
+      <span class="guesser-title">GUESSER</span>
+    </h1>
+    <p class="subtitle">ULTIMATE CHALLENGER EDITION</p>
+    <hr>
+  </header>
+  <main class="flex-container">
+    <section class="left-column">
+      <form class="set-range">
+        <h3 class="set-range-title">Set Range</h3>
+          <fieldset class="range-fieldset">
+            <p>Min Range</p>
+            <input id="min-range" type="number">
+          </fieldset>
+        <fieldset class="range-fieldset">
+          <p>Max Range</p>
+        <input id="max-range" type="number">
+        </fieldset>
+        <button id="update">
+          UPDATE
+        </button>
+      </form>
+      <form class="challenger">
+        <p class="current-range">The Current Range is <span class="bold-min-value"> 1 </span> to <span="bold-max-value">100</span></p>
+        <h3 class="challenger-1">Challenger 1</h3>
+        <p>Name</p>
+        <input id="name-1" type="text">
+        <p>Guess</p>
+        <input id="name-1-guess" type="number">
+        <h3 class="challenger-2">Challenger 2</h3>
+        <p>Name</p>
+        <input id="name-2" type="text">
+        <p>Guess</p>
+        <input id="name-2-guess" type="number">
+        <button id="submit-guess">SUBMIT GUESS</button>
+        <button id="reset-game">RESET GAME</button>
+        <button id="clear-game">CLEAR GAME</button>
+      </form>
+      <article class="latest-score">
+        <h3>Latest Score</h3>
+          <div class="challenger-1-container">
+            <h4 class="latest-score-1-name">Challenger 1 Name</h4>
+            <p class="current-guess">current guess</p>
+            <article id="latest-score-num-1">97</article>
+            <p class="challenger-1-feedback">that's too high</p>
+          </div>
+           <div class="challenger-2-container">
+            <h4 class="latest-score-2-name">Challenger 2 Name</h4>
+            <p class="current-guess">current guess</p>
+            <article id="latest-score-num-2">3</article>
+            <p class="challenger-2-feedback">that's too low</p>
+          </div>
+      </article>
+    </section>
+    <section class="right-column">
+      <article class="card">
+        <!-- still need to style card -->
+      </article>
+    </section>
+  </main>
+</body>
+</html>

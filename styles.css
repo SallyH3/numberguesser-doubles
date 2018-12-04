@@ -1,0 +1,90 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.number-title,
+.main-title {
+  background-color: #404041;
+  color: #DD1972;
+}
+
+.number-title {
+  font-weight: 700;
+}
+
+.guesser-title {
+  font-weight: 300;
+}
+
+.subtitle {
+  color: #FFF;
+}
+
+h3 {
+  color: #6E6E6E;
+  font-weight: bold;
+}
+
+p {
+  color: #6E6E6E;
+}
+
+#min-range,
+#max-range {
+  /*display: block;*/
+}
+
+.range-fieldset {
+  border: none;
+  display: inline-block;
+}
+
+/* --  buttons -- */
+
+#update {
+  border-radius: 100px;
+  background-color: #6E6E6E;
+  color: #FFF;
+  font-weight: bold;
+  height: 25px;
+  width: 100px;
+}
+
+#submit-guess {
+   border-radius: 100px;
+  background-color: #6E6E6E;
+  color: #FFF;
+  font-weight: bold;
+  height: 25px;
+  width: 100px;
+}
+
+#reset-game {
+   border-radius: 100px;
+  background-color: #6E6E6E;
+  color: #FFF;
+  font-weight: bold;
+  height: 25px;
+  width: 100px;
+}
+
+#clear-game {
+   border-radius: 100px;
+  background-color: #6E6E6E;
+  color: #FFF;
+  font-weight: bold;
+  height: 25px;
+  width: 100px;
+}
+
+#latest-score-num-1,
+#latest-score-num-2 {
+  color: #F74D9B;
+  font-weight: 700;
+}
