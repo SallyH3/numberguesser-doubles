@@ -17,16 +17,24 @@ var min = 1;
 var max = 100;
 var range = max - min;
 var randomNumber = Math.floor(Math.random() * (range + 1) + min);
-
+//try to wrap our heads around math function and min, max, range variables
 
 //EVENT LISTENERS
 updateButton.addEventListener('click', getRandomNumber);
 submitGuessButton.addEventListener('click', submitGuessPlayerOne);
 submitGuessButton.addEventListener('click', submitGuessPlayerTwo);
 
-
-
 //FUNCTIONS
+
+function resetClearButtonEnableDisable() {
+  clearGameButton.disabled = true;
+  resetGameButton.disabled = true;
+}
+
+//finish this functon above
+
+clearGameButton.disabled = true;
+resetGameButton.disabled = true;
 
 function getRandomNumber(e) {
   e.preventDefault();
