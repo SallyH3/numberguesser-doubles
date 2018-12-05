@@ -23,18 +23,21 @@ var randomNumber = Math.floor(Math.random() * (range + 1) + min);
 updateButton.addEventListener('click', getRandomNumber);
 submitGuessButton.addEventListener('click', submitGuessPlayerOne);
 submitGuessButton.addEventListener('click', submitGuessPlayerTwo);
+name1.addEventListener('keyup', resetClearButtonEnableDisable);
 
 //FUNCTIONS
 
 function resetClearButtonEnableDisable() {
-  clearGameButton.disabled = true;
-  resetGameButton.disabled = true;
+  var inputFields = document.querySelectorAll('.user-input');
+  console.log(inputFields);
+  for(var i = 0; i < inputFields.length; i++) {
+    if (inputFields[i].value) {
+      clearGameButton.disabled = false;
+      resetGameButton.disabled = false;
+    }
+  }
 }
 
-//finish this functon above
-
-clearGameButton.disabled = true;
-resetGameButton.disabled = true;
 
 function getRandomNumber(e) {
   e.preventDefault();
