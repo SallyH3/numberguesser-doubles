@@ -12,20 +12,41 @@ var clearGameButton = document.querySelector('#clear-game');
 var latestScoreNum1 = document.querySelector('#latest-score-num-1');
 var latestScoreNum2 = document.querySelector('#latest-score-num-2');
 var challenger1Feedback = document.querySelector('.challenger-1-feedback');
-var challenger1Feedback = document.querySelector('.challenger-1-feedback');
-
-
+var challenger2Feedback = document.querySelector('.challenger-2-feedback');
+var min = 1;
+var max = 100;
+var range = max - min;
+var randomNumber = Math.floor(Math.random() * (range + 1) + min);
 
 
 //EVENT LISTENERS
 updateButton.addEventListener('click', getRandomNumber);
-
+submitGuessButton.addEventListener('click', submitGuess);
 
 
 
 //FUNCTIONS
+
 function getRandomNumber(e) {
   e.preventDefault();
-  var randomNumber = Math.floor(Math.random() * 100);
+  randomNumber = Math.floor(Math.random() * (range + 1) + min);
   console.log(randomNumber);
+  return randomNumber;
 }
+
+function submitGuess(e) {
+  e.preventDefault();
+  latestScoreNum1.innerText = nameOneGuess.value;
+  if (nameOneGuess.value === randomNumber) {
+    challenger1Feedback.innerText = 'BOOM!';
+  } else if (nameOneGuess.value < randomNumber) {
+    challenger1Feedback.innerText = 'That\'s too low';
+  } else {
+    challenger1Feedback.innerText = 'That\'s too high';
+  }
+}
+
+//grab input values and check against randomnumber.
+//if number is too low, then feedback will be number too low
+//if number too high, then feedback will be number too high
+//if number is correct, then feedback will display 'boom'
