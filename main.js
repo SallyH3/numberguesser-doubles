@@ -21,7 +21,8 @@ var randomNumber = Math.floor(Math.random() * (range + 1) + min);
 
 //EVENT LISTENERS
 updateButton.addEventListener('click', getRandomNumber);
-submitGuessButton.addEventListener('click', submitGuess);
+submitGuessButton.addEventListener('click', submitGuessPlayerOne);
+submitGuessButton.addEventListener('click', submitGuessPlayerTwo);
 
 
 
@@ -34,7 +35,7 @@ function getRandomNumber(e) {
   return randomNumber;
 }
 
-function submitGuess(e) {
+function submitGuessPlayerOne(e) {
   e.preventDefault();
   latestScoreNum1.innerText = nameOneGuess.value;
   if (nameOneGuess.value === randomNumber) {
@@ -44,8 +45,20 @@ function submitGuess(e) {
   } else {
     challenger1Feedback.innerText = 'That\'s too high';
   }
+   
 }
 
+function submitGuessPlayerTwo(e) {
+  e.preventDefault(); 
+  latestScoreNum2.innerText = nameTwoGuess.value;
+    if(nameTwoGuess.value === randomNumber) {
+    challenger2Feedback.innerText = 'BOOM!';
+  } else if (nameTwoGuess.value < randomNumber) {
+    challenger2Feedback.innerText = 'That\'s too low';
+  } else {
+    challenger2Feedback.innerText = 'That\'s too high';
+  }
+}
 //grab input values and check against randomnumber.
 //if number is too low, then feedback will be number too low
 //if number too high, then feedback will be number too high
