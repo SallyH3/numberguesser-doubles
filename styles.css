@@ -12,20 +12,34 @@
 .main-title {
   background-color: #404041;
   color: #DD1972;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .number-title {
+  font-size: 70px;
   font-weight: 700;
 }
 
 .guesser-title {
+  font-size: 70px;
   font-weight: 300;
 }
 
 .subtitle {
   color: #FFF;
+  font-size: 22px;
+  padding-bottom: 15px;
+}
+
+.ultimate-subtitle-container {
+  display: flex;
+  justify-content: center;
+}
+
+.title-line-decoration {
+  border-bottom: 2px solid #FFF;
+  margin: 0px 15px 28px 15px;
+  width: 122px;
 }
 
 h3 {
@@ -85,11 +99,11 @@ p {
   width: 100px;
 }
 
-#clear-game:disabled{
+#clear-game:disabled {
   background-color: #D0D2D3;
 }
 
-#reset-game:disabled{
+#reset-game:disabled {
   background-color: #D0D2D3;
 }
 
@@ -97,4 +111,16 @@ p {
 #latest-score-num-2 {
   color: #F74D9B;
   font-weight: 700;
+}
+
+.left-column {
+  background-color: #F7F7F7;
+  width: 100%;
+}
+.right-column {
+  background-color: #D1D2D4;
+  border-left: 2px solid #B4B4B4;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
 }

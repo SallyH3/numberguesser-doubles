@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href=“https://fonts.googleapis.com/css?family=Open+Sans:300,700” rel=“stylesheet”>
   <title>Number Guesser Doubles</title>
 </head>
 <body>
@@ -11,8 +11,11 @@
       <span class="number-title">NUMBER</span>
       <span class="guesser-title">GUESSER</span>
     </h1>
+    <section class="ultimate-subtitle-container">
+    <div class="title-line-decoration"></div>
     <p class="subtitle">ULTIMATE CHALLENGER EDITION</p>
-    <hr>
+    <div class="title-line-decoration"></div>
+    </section>
   </header>
   <main class="flex-container">
     <section class="left-column">
@@ -31,20 +34,20 @@
         </button>
       </form>
       <form class="challenger">
-        <p class="current-range">The Current Range is <span class="bold-min-value"> 1 </span> to <span="bold-max-value">100</span></p>
+        <p class="current-range">The Current Range is <span id="current-min" class="bold-min-value"> 1 </span> to <span id="current-max" class="bold-max-value">100</span></p>
         <h3 class="challenger-1">Challenger 1</h3>
         <p>Name</p>
-        <input id="name-1" type="text">
+        <input class="user-input" id="name-1" type="text">
         <p>Guess</p>
-        <input id="name-1-guess" type="number">
+        <input class="user-input" id="name-1-guess" type="number">
         <h3 class="challenger-2">Challenger 2</h3>
         <p>Name</p>
-        <input id="name-2" type="text">
+        <input class="user-input" id="name-2" type="text">
         <p>Guess</p>
-        <input id="name-2-guess" type="number">
+        <input class="user-input" id="name-2-guess" type="number">
         <button id="submit-guess">SUBMIT GUESS</button>
-        <button id="reset-game">RESET GAME</button>
-        <button id="clear-game">CLEAR GAME</button>
+        <button id="reset-game" disabled>RESET GAME</button>
+        <button id="clear-game" disabled>CLEAR GAME</button>
       </form>
       <article class="latest-score">
         <h3>Latest Score</h3>

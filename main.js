@@ -1,6 +1,9 @@
 // GLOBAL VARIABLES
+
 var minRange = document.querySelector('#min-range');
 var maxRange = document.querySelector('#max-range');
+var currentMin = document.querySelector('#current-min');
+var currentMax = document.querySelector('#current-max');
 var updateButton = document.querySelector('#update');
 var name1 = document.querySelector('#name-1');
 var name2 = document.querySelector('#name-2');
@@ -16,29 +19,41 @@ var challenger2Feedback = document.querySelector('.challenger-2-feedback');
 var min = 1;
 var max = 100;
 var range = max - min;
-var randomNumber = Math.floor(Math.random() * (range + 1) + min);
-//try to wrap our heads around math function and min, max, range variables
+var randomNumber = Math.floor(Math.random() * 100);
+
 
 //EVENT LISTENERS
+
 updateButton.addEventListener('click', getRandomNumber);
 submitGuessButton.addEventListener('click', submitGuessPlayerOne);
 submitGuessButton.addEventListener('click', submitGuessPlayerTwo);
+name1.addEventListener('keyup', resetClearButtonEnableDisable);
+name2.addEventListener('keyup', resetClearButtonEnableDisable);
+nameOneGuess.addEventListener('keyup', resetClearButtonEnableDisable);
+nameTwoGuess.addEventListener('keyup', resetClearButtonEnableDisable);
+
+
 
 //FUNCTIONS
 
 function resetClearButtonEnableDisable() {
-  clearGameButton.disabled = true;
-  resetGameButton.disabled = true;
+  var inputFields = document.querySelectorAll('.user-input');
+  for(var i = 0; i < inputFields.length; i++) {
+    if (inputFields[i].value) {
+      clearGameButton.disabled = false;
+      resetGameButton.disabled = false;
+    }
+  }
 }
-
-//finish this functon above
-
-clearGameButton.disabled = true;
-resetGameButton.disabled = true;
 
 function getRandomNumber(e) {
   e.preventDefault();
-  randomNumber = Math.floor(Math.random() * (range + 1) + min);
+  //TODO Choose random number from range instead of hardcoding 100
+  randomNumber = Math.floor(Math.random() * 100);
+  var minRangeInput = minRange.value;
+  var maxRangeInput = maxRange.value;
+  currentMin.innerText = minRangeInput;
+  currentMax.innerText = maxRangeInput;
   console.log(randomNumber);
   return randomNumber;
 }
@@ -46,28 +61,23 @@ function getRandomNumber(e) {
 function submitGuessPlayerOne(e) {
   e.preventDefault();
   latestScoreNum1.innerText = nameOneGuess.value;
-  if (nameOneGuess.value === randomNumber) {
-    challenger1Feedback.innerText = 'BOOM!';
-  } else if (nameOneGuess.value < randomNumber) {
+  if (nameOneGuess.value > randomNumber){
+    challenger1Feedback.innerText = 'That\'s too high';
+} else if (nameOneGuess.value < randomNumber) {
     challenger1Feedback.innerText = 'That\'s too low';
   } else {
-    challenger1Feedback.innerText = 'That\'s too high';
-  }
-   
-}
+    challenger1Feedback.innerText = 'BOOM!';
+      }
+   }
 
 function submitGuessPlayerTwo(e) {
-  e.preventDefault(); 
+  e.preventDefault();
   latestScoreNum2.innerText = nameTwoGuess.value;
-    if(nameTwoGuess.value === randomNumber) {
-    challenger2Feedback.innerText = 'BOOM!';
-  } else if (nameTwoGuess.value < randomNumber) {
+  if (nameTwoGuess.value > randomNumber){
+    challenger2Feedback.innerText = 'That\'s too high';
+} else if (nameTwoGuess.value < randomNumber) {
     challenger2Feedback.innerText = 'That\'s too low';
   } else {
-    challenger2Feedback.innerText = 'That\'s too high';
-  }
-}
-//grab input values and check against randomnumber.
-//if number is too low, then feedback will be number too low
-//if number too high, then feedback will be number too high
-//if number is correct, then feedback will display 'boom'
+    challenger2Feedback.innerText = 'BOOM!';
+      }
+   }
