@@ -12,6 +12,8 @@
 .main-title {
   background-color: #404041;
   color: #DD1972;
+  display: flex;
+  justify-content: center;
 }
 
 .number-title {
