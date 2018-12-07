@@ -16,10 +16,7 @@ var latestScoreNum1 = document.querySelector('#latest-score-num-1');
 var latestScoreNum2 = document.querySelector('#latest-score-num-2');
 var challenger1Feedback = document.querySelector('.challenger-1-feedback');
 var challenger2Feedback = document.querySelector('.challenger-2-feedback');
-var min = 1;
-var max = 100;
-var range = max - min;
-var randomNumber = Math.floor(Math.random() * 100);
+var randomNumber = Math.floor(Math.random() * (maxRange.value-minRange.value + 1)) + minRange.value;
 
 
 //EVENT LISTENERS
@@ -48,14 +45,19 @@ function resetClearButtonEnableDisable() {
 
 function getRandomNumber(e) {
   e.preventDefault();
-  //TODO Choose random number from range instead of hardcoding 100
-  randomNumber = Math.floor(Math.random() * 100);
   var minRangeInput = minRange.value;
   var maxRangeInput = maxRange.value;
   currentMin.innerText = minRangeInput;
   currentMax.innerText = maxRangeInput;
+  randomNumber = getRandomWithinRange(minRange.value, maxRange.value);
   console.log(randomNumber);
   return randomNumber;
+}
+
+function getRandomWithinRange(minRange, maxRange) { 
+  minRange = Math.ceil(minRange);
+  maxRange = Math.floor(maxRange);
+  return Math.floor(Math.random() * (maxRange - minRange)) + minRange;
 }
 
 function submitGuessPlayerOne(e) {
