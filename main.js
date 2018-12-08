@@ -16,7 +16,13 @@ var latestScoreNum1 = document.querySelector('#latest-score-num-1');
 var latestScoreNum2 = document.querySelector('#latest-score-num-2');
 var challenger1Feedback = document.querySelector('.challenger-1-feedback');
 var challenger2Feedback = document.querySelector('.challenger-2-feedback');
-var randomNumber = Math.floor(Math.random() * (maxRange.value-minRange.value + 1)) + minRange.value;
+var min = 1;
+var max = 100;
+var randomNumber = getRandomWithinRange(min, max);
+// Math.floor(Math.random() * (maxRange.value-minRange.value + 1)) + minRange.value;
+console.log('test', randomNumber);
+
+
 
 
 //EVENT LISTENERS
@@ -28,7 +34,8 @@ name1.addEventListener('keyup', resetClearButtonEnableDisable);
 name2.addEventListener('keyup', resetClearButtonEnableDisable);
 nameOneGuess.addEventListener('keyup', resetClearButtonEnableDisable);
 nameTwoGuess.addEventListener('keyup', resetClearButtonEnableDisable);
-
+resetGameButton.addEventListener('click', getRandomWithinRange);
+clearGameButton.addEventListener('click', clearFields);
 
 
 //FUNCTIONS
@@ -41,6 +48,13 @@ function resetClearButtonEnableDisable() {
       resetGameButton.disabled = false;
     }
   }
+}
+function clearFields(e) {
+  e.preventDefault();
+  name1.value = '';
+  name2.value = '';
+  nameOneGuess.value = '';
+  nameTwoGuess.value = '';
 }
 
 function getRandomNumber(e) {
