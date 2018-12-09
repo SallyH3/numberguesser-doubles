@@ -9,8 +9,10 @@ var currentMax = document.querySelector('#current-max');
 var updateButton = document.querySelector('#update');
 var name1 = document.querySelector('#name-1');
 var name2 = document.querySelector('#name-2');
-var nameOneGuess = parseInt(document.querySelector('#name-1-guess').value);
-var nameTwoGuess = parseInt(document.querySelector('#name-2-guess').value);
+var nameOneGuessInputBox = document.querySelector('#name-1-guess');
+var nameTwoGuessInputBox = document.querySelector('#name-2-guess');
+var nameOneGuess;
+var nameTwoGuess;
 var submitGuessButton = document.querySelector('#submit-guess');
 var resetGameButton = document.querySelector('#reset-game');
 var clearGameButton = document.querySelector('#clear-game');
@@ -28,7 +30,6 @@ console.log('test', randomNumber);
 
 //EVENT LISTENERS
 
-// updateButton.addEventListener('click', updateRandomNumber);
 submitGuessButton.addEventListener('click', submitListener);
 name1.addEventListener('keyup', resetClearButtonEnableDisable);
 name2.addEventListener('keyup', resetClearButtonEnableDisable);
@@ -39,11 +40,7 @@ clearGameButton.addEventListener('click', clearFields);
 
 updateButton.addEventListener('click', function(e) {
   e.preventDefault();
-  // minRange = parseInt(document.querySelector('#min-range').value);
-  // maxRange = parseInt(document.querySelector('#max-range').value);
-  // randomNumber = getRandomWithinRange();
   updateRandomNumber();
-
 });
 
 
@@ -58,6 +55,7 @@ function resetClearButtonEnableDisable() {
     }
   }
 }
+
 function clearFields(e) {
   e.preventDefault();
   name1.value = '';
@@ -65,17 +63,6 @@ function clearFields(e) {
   document.querySelector('#name-1-guess').value = '';
   document.querySelector('#name-2-guess').value = '';
 }
-
-// function initialRandomNumber(e) {
-//   e.preventDefault();
-  // minMaxErrorMessage(e);
-  // var minRangeInput = minRangeInputBox;
-  // var maxRangeInput = maxRangeInputBox;
-  
-  // randomNumber = getRandomWithinRange(min, max);
-  // console.log(randomNumber);
-  // return randomNumber;
-// }
 
 function updateRandomNumber() {
   minRange = parseInt(minRangeInputBox.value);
@@ -105,6 +92,7 @@ function submitListener(e) {
 
 function submitGuessPlayerOne(e) {
   e.preventDefault();
+  nameOneGuess = parseInt(nameOneGuessInputBox.value);
   latestScoreNum1.innerText = nameOneGuess;
   if (nameOneGuess > randomNumber){
     challenger1Feedback.innerText = 'That\'s too high';
@@ -117,6 +105,7 @@ function submitGuessPlayerOne(e) {
 
 function submitGuessPlayerTwo(e) {
   e.preventDefault();
+  nameTwoGuess = parseInt(nameTwoGuessInputBox.value);
   latestScoreNum2.innerText = nameTwoGuess;
   if (nameTwoGuess > randomNumber){
     challenger2Feedback.innerText = 'That\'s too high';
