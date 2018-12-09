@@ -2,8 +2,8 @@
 
 var minRangeInputBox = document.getElementById('min-range');
 var maxRangeInputBox = document.getElementById('max-range');
-var minRange;
-var maxRange;
+var minRange = 1;
+var maxRange = 100;
 var currentMin = document.querySelector('#current-min');
 var currentMax = document.querySelector('#current-max');
 var updateButton = document.querySelector('#update');
@@ -20,9 +20,9 @@ var latestScoreNum1 = document.querySelector('#latest-score-num-1');
 var latestScoreNum2 = document.querySelector('#latest-score-num-2');
 var challenger1Feedback = document.querySelector('.challenger-1-feedback');
 var challenger2Feedback = document.querySelector('.challenger-2-feedback');
-var min = 1;
-var max = 100;
-var randomNumber = getRandomWithinRange(min, max);
+var initialMin = 1;
+var initialMax = 100;
+var randomNumber = getRandomWithinRange(initialMin, initialMax);
 console.log('test', randomNumber);
 
 
@@ -116,16 +116,14 @@ function submitGuessPlayerTwo(e) {
       }
    }
 
-    function outsideRangeErrorChallenger1(e) {
-  e.preventDefault();
+    function outsideRangeErrorChallenger1() {
   if(nameOneGuess < minRange || nameOneGuess > maxRange) {
     challenger1Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
   } 
 }
 
 
-    function outsideRangeErrorChallenger2(e) {
-  e.preventDefault();
+    function outsideRangeErrorChallenger2() {
   if(nameTwoGuess < minRange || nameTwoGuess > maxRange) {
     challenger2Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
   } 
