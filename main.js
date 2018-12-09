@@ -20,6 +20,8 @@ var latestScoreNum1 = document.querySelector('#latest-score-num-1');
 var latestScoreNum2 = document.querySelector('#latest-score-num-2');
 var challenger1Feedback = document.querySelector('.challenger-1-feedback');
 var challenger2Feedback = document.querySelector('.challenger-2-feedback');
+var challenger1Name = document.querySelector('.latest-score-1-name');
+var challenger2Name = document.querySelector('.latest-score-2-name');
 var initialMin = 1;
 var initialMax = 100;
 var randomNumber = getRandomWithinRange(initialMin, initialMax);
@@ -74,6 +76,11 @@ function updateRandomNumber() {
   console.log(randomNumber);
 }
 
+function updateChallengerNames() {
+  challenger1Name.innerText = name1.value;
+  challenger2Name.innerText = name2.value;
+}
+
  
 function getRandomWithinRange(givenMin, givenMax) { 
   // minRange = Math.ceil(minRange);
@@ -88,6 +95,7 @@ function submitListener(e) {
   submitGuessPlayerTwo(e);
   outsideRangeErrorChallenger1(e);
   outsideRangeErrorChallenger2(e);
+  updateChallengerNames();
 }
 
 function submitGuessPlayerOne(e) {
