@@ -19,7 +19,6 @@ var challenger2Feedback = document.querySelector('.challenger-2-feedback');
 var min = 1;
 var max = 100;
 var randomNumber = getRandomWithinRange(min, max);
-// Math.floor(Math.random() * (maxRange.value-minRange.value + 1)) + minRange.value;
 console.log('test', randomNumber);
 
 
@@ -28,8 +27,7 @@ console.log('test', randomNumber);
 //EVENT LISTENERS
 
 updateButton.addEventListener('click', getRandomNumber);
-submitGuessButton.addEventListener('click', submitGuessPlayerOne);
-submitGuessButton.addEventListener('click', submitGuessPlayerTwo);
+// submitGuessButton.addEventListener('click', submitGuessPlayerOne);
 name1.addEventListener('keyup', resetClearButtonEnableDisable);
 name2.addEventListener('keyup', resetClearButtonEnableDisable);
 nameOneGuess.addEventListener('keyup', resetClearButtonEnableDisable);
@@ -74,26 +72,87 @@ function getRandomWithinRange(minRange, maxRange) {
   return Math.floor(Math.random() * (maxRange - minRange)) + minRange;
 }
 
+// function outsideRangeError(e) {
+//   e.preventDefault();
+//   if (nameOneGuess.value < minRange.value || nameOneGuess.value > maxRange.value) {
+//     console.log('name1guess', nameOneGuess.value);
+//     console.log('chall1feedback', challenger1Feedback);
+//     challenger1Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
+// } else {
+//   submitGuessPlayerOne(e);
+// }
+// }
+
 function submitGuessPlayerOne(e) {
   e.preventDefault();
   latestScoreNum1.innerText = nameOneGuess.value;
-  if (nameOneGuess.value > randomNumber){
-    challenger1Feedback.innerText = 'That\'s too high';
-} else if (nameOneGuess.value < randomNumber) {
-    challenger1Feedback.innerText = 'That\'s too low';
-  } else {
+  if (nameOneGuess.value == randomNumber) {
     challenger1Feedback.innerText = 'BOOM!';
-      }
-   }
+  } else if (nameOneGuess.value < randomNumber && nameOneGuess >= minRange.value) {
+    challenger1Feedback.innerText = 'That\'s too low'; 
+} else if (nameOneGuess.value > randomNumber && nameOneGuess<= maxRange.value) {
+    challenger1Feedback.innerText = 'That\'s too high';
+    } 
+}
 
-function submitGuessPlayerTwo(e) {
-  e.preventDefault();
-  latestScoreNum2.innerText = nameTwoGuess.value;
-  if (nameTwoGuess.value > randomNumber){
-    challenger2Feedback.innerText = 'That\'s too high';
-} else if (nameTwoGuess.value < randomNumber) {
-    challenger2Feedback.innerText = 'That\'s too low';
-  } else {
-    challenger2Feedback.innerText = 'BOOM!';
-      }
-   }
+//when you click the submit
+
+// function submitGuessPlayerTwo(e) {
+//   e.preventDefault();
+//   latestScoreNum2.innerText = nameTwoGuess.value;
+//   if (nameTwoGuess.value == randomNumber) {
+//     challenger2Feedback.innerText = 'BOOM!';
+//     } else if (nameTwoGuess.value < minRange.value || nameTwoGuess.value > maxRange.value) {
+//     challenger2Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
+//   } else if (nameTwoGuess.value < randomNumber) {
+//     challenger2Feedback.innerText = 'That\'s too low'; 
+//   } else if (nameTwoGuess.value > randomNumber){
+//     challenger2Feedback.innerText = 'That\'s too high';
+// }
+// }
+
+// function submitGuessPlayerOne(e) {
+//   e.preventDefault();
+//   latestScoreNum1.innerText = nameOneGuess.value;
+//   if (nameOneGuess.value > randomNumber){
+//     challenger1Feedback.innerText = 'That\'s too high';
+// } else if (nameOneGuess.value < randomNumber) {
+//     challenger1Feedback.innerText = 'That\'s too low';
+//   } else {
+//     challenger1Feedback.innerText = 'BOOM!';
+//       }
+//    }
+
+// function submitGuessPlayerTwo(e) {
+//   e.preventDefault();
+//   latestScoreNum2.innerText = nameTwoGuess.value;
+//   if (nameTwoGuess.value > randomNumber){
+//     challenger2Feedback.innerText = 'That\'s too high';
+// } else if (nameTwoGuess.value < randomNumber) {
+//     challenger2Feedback.innerText = 'That\'s too low';
+//   } else {
+//     challenger2Feedback.innerText = 'BOOM!';
+//       }
+//    }
+
+ //    function outsideRangeError(e) {
+ //  e.preventDefault();
+ //  if(nameOneGuess.value < minRange.value || nameOneGuess.value > maxRange.value) {
+ //    challenger1Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
+ //  } 
+ //  if (nameTwoGuess.value < minRange.value || nameTwoGuess.value > maxRange.value) {
+ //    challenger2Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
+ //  } 
+ // }
+
+ //   function minMaxErrorMessage(e) {
+ //    e.preventDefault();
+ //    if (maxRange.value < minRange.value) {
+ //      challenger1Feedback.innerText = 'Sorry, your max entry is lower than your min entry, try again';
+ //   }
+ //    if (maxRange.value < minRange.value) {
+ //      challenger2Feedback.innerText = 'Sorry, your max entry is lower than your min entry, try again';
+ //   }
+ // }
+
+
