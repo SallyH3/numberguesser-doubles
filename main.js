@@ -98,7 +98,7 @@ function submitGuessPlayerOne(e) {
     challenger1Feedback.innerText = 'That\'s too high';
 } else if (nameOneGuess < randomNumber) {
     challenger1Feedback.innerText = 'That\'s too low';
-  } else {
+  } else if (nameOneGuess === randomNumber) {
     challenger1Feedback.innerText = 'BOOM!';
       }
    }
@@ -111,7 +111,7 @@ function submitGuessPlayerTwo(e) {
     challenger2Feedback.innerText = 'That\'s too high';
 } else if (nameTwoGuess < randomNumber) {
     challenger2Feedback.innerText = 'That\'s too low';
-  } else {
+  } else if (nameTwoGuess === randomNumber) {
     challenger2Feedback.innerText = 'BOOM!';
       }
    }
