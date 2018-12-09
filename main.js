@@ -46,6 +46,20 @@ updateButton.addEventListener('click', function(e) {
 
 //FUNCTIONS
 
+function checkInputIsNanChallengerOne() {
+  var parsedValue = parseInt(nameOneGuessInputBox.value);
+  if (isNaN(parsedValue)) {
+    challenger1Feedback.innerText = 'That\'s not a number, try again';
+}
+}
+
+function checkInputIsNanChallengerTwo() {
+  var parsedValue = parseInt(nameTwoGuessInputBox.value);
+  if (isNaN(parsedValue)) {
+    challenger2Feedback.innerText = 'That\'s not a number, try again';
+}
+}
+
 function resetClearButtonEnableDisable() {
   var inputFields = document.querySelectorAll('.user-input');
   for(var i = 0; i < inputFields.length; i++) {
@@ -88,6 +102,8 @@ function submitListener(e) {
   submitGuessPlayerTwo(e);
   outsideRangeErrorChallenger1(e);
   outsideRangeErrorChallenger2(e);
+  checkInputIsNanChallengerOne();
+  checkInputIsNanChallengerTwo()
 }
 
 function submitGuessPlayerOne(e) {
