@@ -43,6 +43,8 @@ clearGameButton.addEventListener('click', clearFields);
 updateButton.addEventListener('click', function(e) {
   e.preventDefault();
   updateRandomNumber();
+  checkInputIsNanChallengerOne();
+  checkInputIsNanChallengerTwo();
 });
 
 
@@ -111,7 +113,7 @@ function submitListener(e) {
   outsideRangeErrorChallenger2(e);
   updateChallengerNames();
   checkInputIsNanChallengerOne();
-  checkInputIsNanChallengerTwo()
+  checkInputIsNanChallengerTwo();
 }
 
 function submitGuessPlayerOne(e) {
