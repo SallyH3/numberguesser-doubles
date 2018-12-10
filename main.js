@@ -50,6 +50,14 @@ updateButton.addEventListener('click', function(e) {
 
 //FUNCTIONS
 
+function addPinkBorder(htmlInputElement) {
+  htmlInputElement.classList.add('pink-border');
+}
+
+function removePinkBorder(htmlInputElement) {
+  htmlInputElement.classList.remove('pink-border');
+}
+
 function checkInputIsNanChallengerOne() {
   var parsedValue = parseInt(nameOneGuessInputBox.value);
   if (isNaN(parsedValue)) {
@@ -85,10 +93,12 @@ function clearFields(e) {
 function updateRandomNumber() {
   minRange = parseInt(minRangeInputBox.value);
   maxRange = parseInt(maxRangeInputBox.value);
+  var isValidRange = minMaxErrorMessage();
+  if(isValidRange === true) {
+  randomNumber = getRandomWithinRange(minRange, maxRange); 
   currentMin.innerText = minRange;
   currentMax.innerText = maxRange;
-  minMaxErrorMessage();
-  randomNumber = getRandomWithinRange(minRange, maxRange);
+  }
   console.log(randomNumber);
 }
 
@@ -148,9 +158,8 @@ function submitGuessPlayerTwo(e) {
   } 
 }
 
-
-    function outsideRangeErrorChallenger2() {
-  if(nameTwoGuess < minRange || nameTwoGuess > maxRange) {
+  function outsideRangeErrorChallenger2() {
+    if(nameTwoGuess < minRange || nameTwoGuess > maxRange) {
     challenger2Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
   } 
 }
@@ -158,7 +167,15 @@ function submitGuessPlayerTwo(e) {
    function minMaxErrorMessage() {
     if (maxRange < minRange) {
       challenger1Feedback.innerText = 'Sorry, your max entry is lower than your min entry, try again';
+      addPinkBorder(minRangeInputBox);
+      addPinkBorder(maxRangeInputBox);
+      return false;
+    } else {
+      removePinkBorder(minRangeInputBox);
+      removePinkBorder(maxRangeInputBox);
+      return true;
     }
+
  }
 
  //move the error feedback below min and max input fields
