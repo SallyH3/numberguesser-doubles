@@ -56,6 +56,10 @@ p {
   /*display: block;*/
 }
 
+.pink-border {
+  border: 2px solid #DD1972;
+}
+
 .range-fieldset {
   border: none;
   display: inline-block;
