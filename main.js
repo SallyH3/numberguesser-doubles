@@ -124,6 +124,7 @@ function submitListener(e) {
   updateChallengerNames();
   checkInputIsNanChallengerOne();
   checkInputIsNanChallengerTwo();
+  addWinnerCard();
 }
 
 function submitGuessPlayerOne(e) {
@@ -167,6 +168,9 @@ function submitGuessPlayerTwo(e) {
    function minMaxErrorMessage() {
     if (maxRange < minRange) {
       challenger1Feedback.innerText = 'Sorry, your max entry is lower than your min entry, try again';
+      //put icon here with innerHTML
+      //remove hidden class here so that it shows the error text
+      //when not error message, add hidden class, for lines 171 and 172 --> with classList add or remove
       addPinkBorder(minRangeInputBox);
       addPinkBorder(maxRangeInputBox);
       return false;
@@ -177,8 +181,31 @@ function submitGuessPlayerTwo(e) {
     }
 
  }
-
  //move the error feedback below min and max input fields
+
+ function addWinnerCard() {
+  var element = document.createElement('section');
+  var challengerOneName = name1.value.toUpperCase();
+  var challengerTwoName = name2.value.toUpperCase();
+  element.className = 'winner-card';
+    element.innerHTML =
+    `<div class="challenger-card-names">
+    <p class="chall-one-name">${challengerOneName}</p>
+    <p class="vs">VS</p>
+    <p class="chall-two-name">${challengerTwoName}</p>
+    <hr>
+    <p class="large-display-name">CHALLENGER 2 NAME</p>
+    <p class="winner-text">WINNER</p>
+    <hr>
+    <p class="number-of-guesses">47</p>
+    <p class="guesses-text">GUESSES</p>
+    <p class="time-taken-display">1.35</p>
+    <p class="minutes-text">MINUTES</p>
+    </div>
+    `;
+    document.querySelector('.right-column').appendChild(element);
+ }
+
 
 
 
