@@ -124,6 +124,7 @@ function submitListener(e) {
   updateChallengerNames();
   checkInputIsNanChallengerOne();
   checkInputIsNanChallengerTwo();
+  addWinnerCard();
 }
 
 function submitGuessPlayerOne(e) {
@@ -167,6 +168,9 @@ function submitGuessPlayerTwo(e) {
    function minMaxErrorMessage() {
     if (maxRange < minRange) {
       challenger1Feedback.innerText = 'Sorry, your max entry is lower than your min entry, try again';
+      //put icon here with innerHTML
+      //remove hidden class here so that it shows the error text
+      //when not error message, add hidden class, for lines 171 and 172 --> with classList add or remove
       addPinkBorder(minRangeInputBox);
       addPinkBorder(maxRangeInputBox);
       return false;
@@ -178,7 +182,9 @@ function submitGuessPlayerTwo(e) {
 
  }
 
-function addWinnerCard() {
+ //move the error feedback below min and max input fields
+
+ function addWinnerCard() {
   var element = document.createElement('section');
   var challengerOneName = name1.value.toUpperCase();
   var challengerTwoName = name2.value.toUpperCase();
@@ -201,7 +207,6 @@ function addWinnerCard() {
     document.querySelector('.right-column').appendChild(element);
  }
 
- //move the error feedback below min and max input fields
 
 
 
