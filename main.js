@@ -167,7 +167,7 @@ function submitGuessPlayerTwo(e) {
 
    function minMaxErrorMessage() {
     if (maxRange < minRange) {
-      challenger1Feedback.innerText = 'Sorry, your max entry is lower than your min entry, try again';
+      document.querySelector('.pink-error-message').innerHTML = `<img src="error-icon.svg"> Max entry is lower than min entry, try again`;
       //put icon here with innerHTML
       //remove hidden class here so that it shows the error text
       //when not error message, add hidden class, for lines 171 and 172 --> with classList add or remove
