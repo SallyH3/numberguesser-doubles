@@ -181,6 +181,7 @@ function submitGuessPlayerTwo(e) {
     }
 
  }
+
  //move the error feedback below min and max input fields
 
  function addWinnerCard() {
