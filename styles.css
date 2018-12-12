@@ -8,10 +8,17 @@
   display: flex;
 }
 
+.left-column {
+  background-color: #F7F7F7;
+  height: 100vh;
+  width: 100%;
+}
+
 .number-title,
 .main-title {
   background-color: #404041;
   color: #DD1972;
+  padding: 12px;
   text-align: center;
 }
 
@@ -44,7 +51,9 @@
 
 h3 {
   color: #6E6E6E;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 5px;
 }
 
 p {
@@ -53,7 +62,9 @@ p {
 
 #min-range,
 #max-range {
-  /*display: block;*/
+  height: 35px;
+  width: 225px;
+  margin-right: 15px;
 }
 
 .pink-border {
@@ -63,10 +74,63 @@ p {
 img {
   width: 15px;
 }
+.set-range {
+  background-color: #FFF;
+  border: 1px solid #D0D2D3;
+  margin: 20px;
+  padding: 20px;
+}
 
 .range-fieldset {
   border: none;
   display: inline-block;
+}
+
+.range-fieldset p {
+  font-size: 24px;
+  margin-bottom: 3px;
+}
+
+
+.challenger {
+  background-color: #FFF;
+  border: 1px solid #D0D2D3;
+  margin: 20px;
+  padding: 20px;
+}
+
+.current-range {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.bold-min-value,
+.bold-max-value {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.challenger-fieldset {
+  border: none;
+  display: inline-block;
+}
+
+.challenger-fieldset p {
+  font-size: 24px;
+  margin-bottom: 3px;
+}
+
+#name-1,
+#name-2 {
+  height: 35px;
+  width: 420px;
+}
+
+#name-1-guess,
+#name-2-guess {
+  height: 35px;
+  width: 225px;
+  margin-left: 15px;
 }
 
 /* --  buttons -- */
@@ -75,36 +139,29 @@ img {
   border-radius: 100px;
   background-color: #6E6E6E;
   color: #FFF;
+  font-size: 20px;
   font-weight: bold;
-  height: 25px;
-  width: 100px;
+  height: 40px;
+  margin-left: 15px;
+  width: 175px;
 }
 
-#submit-guess {
-   border-radius: 100px;
-  background-color: #6E6E6E;
-  color: #FFF;
-  font-weight: bold;
-  height: 25px;
-  width: 100px;
+.challenger-buttons {
+  margin-top: 35px;
+  margin-bottom: -9px;
 }
 
-#reset-game {
-   border-radius: 100px;
-  background-color: #6E6E6E;
-  color: #FFF;
-  font-weight: bold;
-  height: 25px;
-  width: 100px;
-}
-
+#submit-guess,
+#reset-game,
 #clear-game {
-   border-radius: 100px;
   background-color: #6E6E6E;
+  border-radius: 100px;
   color: #FFF;
+  font-size: 20px;
   font-weight: bold;
-  height: 25px;
-  width: 100px;
+  height: 40px;
+  margin: 3px;
+  width: 215px;
 }
 
 #clear-game:disabled {
@@ -115,19 +172,58 @@ img {
   background-color: #D0D2D3;
 }
 
+.latest-score {
+  background-color: #FFF;
+  border: 1px solid #D0D2D3;
+  margin: 20px;
+  padding: 20px;
+}
+
+.latest-score-1-name,
+.latest-score-2-name {
+  font-size: 24px;
+  color: #6E6E6E;
+}
+
+.challenger-1-container,
+.challenger-2-container {
+  display: inline-block;
+  text-align: center;
+}
+
+.latest-score-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 #latest-score-num-1,
 #latest-score-num-2 {
   color: #F74D9B;
+  font-size: 100px;
   font-weight: 700;
 }
 
-.left-column {
-  background-color: #F7F7F7;
-  width: 100%;
+#vl {
+border-left: 2px solid #D0D2D3;
+  display: inline-block;
+  height: 225px;
 }
+
+.current-guess {
+  font-size: 22px;
+  font-weight: lighter;
+}
+
+.challenger-1-feedback,
+.challenger-2-feedback {
+  font-size: 28px;
+  font-weight: lighter;
+}
+
 .right-column {
   background-color: #D1D2D4;
   border-left: 2px solid #B4B4B4;
+  height: 100vh;
   padding: 20px;
   text-align: center;
   width: 100%;
