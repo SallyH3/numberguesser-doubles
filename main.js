@@ -141,7 +141,6 @@ function submitListener(e) {
   updateChallengerNames();
   checkInputIsNanChallengerOne();
   checkInputIsNanChallengerTwo();
-  addWinnerCard();
 }
 
 function submitGuessPlayerOne(e) {
@@ -154,6 +153,7 @@ function submitGuessPlayerOne(e) {
     challenger1Feedback.innerText = 'that\'s too low';
   } else if (nameOneGuess === randomNumber) {
     challenger1Feedback.innerText = 'BOOM!';
+    addWinnerCard();
       }
    }
 
@@ -167,6 +167,7 @@ function submitGuessPlayerTwo(e) {
     challenger2Feedback.innerText = 'that\'s too low';
   } else if (nameTwoGuess === randomNumber) {
     challenger2Feedback.innerText = 'BOOM!';
+    addWinnerCard();
       }
    }
 
@@ -212,7 +213,7 @@ function submitGuessPlayerTwo(e) {
     <p class="vs">VS</p>
     <p class="chall-two-name">${challengerTwoName}</p>
     <hr>
-    <p class="large-display-name">CHALLENGER 2 NAME</p>
+    <p class="large-display-name">WINNER NAME</p>
     <p class="winner-text">WINNER</p>
     <hr>
     <p class="number-of-guesses">47</p>
