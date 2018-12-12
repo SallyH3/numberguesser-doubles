@@ -43,8 +43,9 @@ clearGameButton.addEventListener('click', clearFields);
 updateButton.addEventListener('click', function(e) {
   e.preventDefault();
   updateRandomNumber();
-  checkInputIsNanChallengerOne();
-  checkInputIsNanChallengerTwo();
+  checkInputIsEmptyMinRange(e);
+  checkInputIsEmptyMaxRange(e);
+  //replace min/max range inputs into the functions above
 });
 
 
@@ -56,6 +57,22 @@ function addPinkBorder(htmlInputElement) {
 
 function removePinkBorder(htmlInputElement) {
   htmlInputElement.classList.remove('pink-border');
+}
+
+function checkInputIsEmptyMinRange(e) {
+  e.preventDefault();
+var parsedValue = parseInt(minRangeInputBox.value);
+  if (isNaN(parsedValue)) {
+    challenger1Feedback.innerText = 'That\'s not a number, try again';
+}
+}
+
+function checkInputIsEmptyMaxRange(e) {
+  e.preventDefault();
+var parsedValue = parseInt(maxRangeInputBox.value);
+  if (isNaN(parsedValue)) {
+    challenger2Feedback.innerText = 'That\'s not a number, try again';
+}
 }
 
 function checkInputIsNanChallengerOne() {
