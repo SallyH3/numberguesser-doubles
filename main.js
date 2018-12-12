@@ -22,8 +22,10 @@ var challenger1Feedback = document.querySelector('.challenger-1-feedback');
 var challenger2Feedback = document.querySelector('.challenger-2-feedback');
 var challenger1Name = document.querySelector('.latest-score-1-name');
 var challenger2Name = document.querySelector('.latest-score-2-name');
+var rightColumn = document.querySelector('.right-column');
 var initialMin = 1;
 var initialMax = 100;
+var guessCount = 0;
 var randomNumber = getRandomWithinRange(initialMin, initialMax);
 console.log('test', randomNumber);
 
@@ -32,6 +34,7 @@ console.log('test', randomNumber);
 
 //EVENT LISTENERS
 
+rightColumn.addEventListener('click', deleteWinnerCard);
 submitGuessButton.addEventListener('click', submitListener);
 name1.addEventListener('keyup', resetClearButtonEnableDisable);
 name2.addEventListener('keyup', resetClearButtonEnableDisable);
@@ -51,6 +54,12 @@ updateButton.addEventListener('click', function(e) {
 
 //FUNCTIONS
 
+function deleteWinnerCard(e) {
+  if(e.target.classList.contains('fas')) {
+    e.target.closest('.winner-card').remove();
+  }
+}
+
 function addPinkBorder(htmlInputElement) {
   htmlInputElement.classList.add('pink-border');
 }
@@ -63,7 +72,7 @@ function checkInputIsNanMinRange(e) {
   e.preventDefault();
 var parsedValue = parseInt(minRangeInputBox.value);
   if (isNaN(parsedValue)) {
-    challenger1Feedback.innerText = 'that\'s not a number, try again';
+    document.querySelector('.pink-error-message').innerHTML= 'that\'s not a number, try again';
 }
 }
 
@@ -71,7 +80,7 @@ function checkInputIsNanMaxRange(e) {
   e.preventDefault();
 var parsedValue = parseInt(maxRangeInputBox.value);
   if (isNaN(parsedValue)) {
-    challenger2Feedback.innerText = 'that\'s not a number, try again';
+    document.querySelector('.pink-error-message').innerHTML = 'that\'s not a number, try again';
 }
 }
 
@@ -126,14 +135,13 @@ function updateChallengerNames() {
 
  
 function getRandomWithinRange(givenMin, givenMax) { 
-  // minRange = Math.ceil(minRange);
-  // maxRange = Math.floor(maxRange);
   return Math.floor(Math.random() * (givenMax - givenMin)) + givenMin;
 }
 
 
 function submitListener(e) {
   e.preventDefault();
+  guessCount++;
   submitGuessPlayerOne(e);
   submitGuessPlayerTwo(e);
   outsideRangeErrorChallenger1(e);
@@ -193,6 +201,7 @@ function submitGuessPlayerTwo(e) {
       addPinkBorder(maxRangeInputBox);
       return false;
     } else {
+      document.querySelector('.pink-error-message').innerHTML = '';
       removePinkBorder(minRangeInputBox);
       removePinkBorder(maxRangeInputBox);
       return true;
@@ -219,7 +228,7 @@ function submitGuessPlayerTwo(e) {
     <hr>
     <div class="card-footer">
     <div class="guesses-container">
-    <span class="number-of-guesses">47</span>
+    <span class="number-of-guesses">${guessCount}</span>
     <span class="guesses-text">GUESSES</span>
     </div>
     <div class="minutes-container">
@@ -231,6 +240,7 @@ function submitGuessPlayerTwo(e) {
     </div>
     </div>
     `;
+    guessCount = 0;
     document.querySelector('.right-column').appendChild(element);
  }
 
