@@ -153,7 +153,7 @@ function submitGuessPlayerOne(e) {
     challenger1Feedback.innerText = 'that\'s too low';
   } else if (nameOneGuess === randomNumber) {
     challenger1Feedback.innerText = 'BOOM!';
-    addWinnerCard();
+    addWinnerCard(name1.value);
       }
    }
 
@@ -167,7 +167,7 @@ function submitGuessPlayerTwo(e) {
     challenger2Feedback.innerText = 'that\'s too low';
   } else if (nameTwoGuess === randomNumber) {
     challenger2Feedback.innerText = 'BOOM!';
-    addWinnerCard();
+    addWinnerCard(name2.value);
       }
    }
 
@@ -202,7 +202,7 @@ function submitGuessPlayerTwo(e) {
 
  //move the error feedback below min and max input fields
 
- function addWinnerCard() {
+ function addWinnerCard(winner) {
   var element = document.createElement('section');
   var challengerOneName = name1.value.toUpperCase();
   var challengerTwoName = name2.value.toUpperCase();
@@ -213,7 +213,7 @@ function submitGuessPlayerTwo(e) {
     <p class="vs">VS</p>
     <p class="chall-two-name">${challengerTwoName}</p>
     <hr>
-    <p class="large-display-name">WINNER NAME</p>
+    <p class="large-display-name">${winner}</p>
     <p class="winner-text">WINNER</p>
     <hr>
     <p class="number-of-guesses">47</p>
