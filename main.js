@@ -43,8 +43,8 @@ clearGameButton.addEventListener('click', clearFields);
 updateButton.addEventListener('click', function(e) {
   e.preventDefault();
   updateRandomNumber();
-  checkInputIsEmptyMinRange(e);
-  checkInputIsEmptyMaxRange(e);
+  checkInputIsNanMinRange(e);
+  checkInputIsNanMaxRange(e);
   //replace min/max range inputs into the functions above
 });
 
@@ -59,33 +59,33 @@ function removePinkBorder(htmlInputElement) {
   htmlInputElement.classList.remove('pink-border');
 }
 
-function checkInputIsEmptyMinRange(e) {
+function checkInputIsNanMinRange(e) {
   e.preventDefault();
 var parsedValue = parseInt(minRangeInputBox.value);
   if (isNaN(parsedValue)) {
-    challenger1Feedback.innerText = 'That\'s not a number, try again';
+    challenger1Feedback.innerText = 'that\'s not a number, try again';
 }
 }
 
-function checkInputIsEmptyMaxRange(e) {
+function checkInputIsNanMaxRange(e) {
   e.preventDefault();
 var parsedValue = parseInt(maxRangeInputBox.value);
   if (isNaN(parsedValue)) {
-    challenger2Feedback.innerText = 'That\'s not a number, try again';
+    challenger2Feedback.innerText = 'that\'s not a number, try again';
 }
 }
 
 function checkInputIsNanChallengerOne() {
   var parsedValue = parseInt(nameOneGuessInputBox.value);
   if (isNaN(parsedValue)) {
-    challenger1Feedback.innerText = 'That\'s not a number, try again';
+    challenger1Feedback.innerText = 'that\'s not a number, try again';
 }
 }
 
 function checkInputIsNanChallengerTwo() {
   var parsedValue = parseInt(nameTwoGuessInputBox.value);
   if (isNaN(parsedValue)) {
-    challenger2Feedback.innerText = 'That\'s not a number, try again';
+    challenger2Feedback.innerText = 'that\'s not a number, try again';
 }
 }
 
@@ -149,9 +149,9 @@ function submitGuessPlayerOne(e) {
   nameOneGuess = parseInt(nameOneGuessInputBox.value);
   latestScoreNum1.innerText = nameOneGuess;
   if (nameOneGuess > randomNumber){
-    challenger1Feedback.innerText = 'That\'s too high';
+    challenger1Feedback.innerText = 'that\'s too high';
 } else if (nameOneGuess < randomNumber) {
-    challenger1Feedback.innerText = 'That\'s too low';
+    challenger1Feedback.innerText = 'that\'s too low';
   } else if (nameOneGuess === randomNumber) {
     challenger1Feedback.innerText = 'BOOM!';
       }
@@ -162,9 +162,9 @@ function submitGuessPlayerTwo(e) {
   nameTwoGuess = parseInt(nameTwoGuessInputBox.value);
   latestScoreNum2.innerText = nameTwoGuess;
   if (nameTwoGuess > randomNumber){
-    challenger2Feedback.innerText = 'That\'s too high';
+    challenger2Feedback.innerText = 'that\'s too high';
 } else if (nameTwoGuess < randomNumber) {
-    challenger2Feedback.innerText = 'That\'s too low';
+    challenger2Feedback.innerText = 'that\'s too low';
   } else if (nameTwoGuess === randomNumber) {
     challenger2Feedback.innerText = 'BOOM!';
       }
@@ -172,13 +172,13 @@ function submitGuessPlayerTwo(e) {
 
     function outsideRangeErrorChallenger1() {
   if(nameOneGuess < minRange || nameOneGuess > maxRange) {
-    challenger1Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
+    challenger1Feedback.innerText = 'sorry, that\'s outside the range you set, try again';
   } 
 }
 
   function outsideRangeErrorChallenger2() {
     if(nameTwoGuess < minRange || nameTwoGuess > maxRange) {
-    challenger2Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
+    challenger2Feedback.innerText = 'sorry, that\'s outside the range you set, try again';
   } 
 }
 
