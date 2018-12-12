@@ -212,14 +212,23 @@ function submitGuessPlayerTwo(e) {
     <p class="chall-one-name">${challengerOneName}</p>
     <p class="vs">VS</p>
     <p class="chall-two-name">${challengerTwoName}</p>
+    </div>
     <hr>
     <p class="large-display-name">${winner}</p>
     <p class="winner-text">WINNER</p>
     <hr>
-    <p class="number-of-guesses">47</p>
-    <p class="guesses-text">GUESSES</p>
-    <p class="time-taken-display">1.35</p>
-    <p class="minutes-text">MINUTES</p>
+    <div class="card-footer">
+    <div class="guesses-container">
+    <span class="number-of-guesses">47</span>
+    <span class="guesses-text">GUESSES</span>
+    </div>
+    <div class="minutes-container">
+    <span class="time-taken-display">1.35</span>
+    <span class="minutes-text">MINUTES</span>
+    <span class="delete-icon">
+    <i class="fas fa-times-circle"></i>
+    </span>
+    </div>
     </div>
     `;
     document.querySelector('.right-column').appendChild(element);
