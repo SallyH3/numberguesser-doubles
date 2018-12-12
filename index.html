@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <link href=“https://fonts.googleapis.com/css?family=Open+Sans:300,700” rel=“stylesheet”>
+  <link href=“https://fonts.googleapis.com/css?family=Open+Sans:300,700,900” rel=“stylesheet”>
   <title>Number Guesser Doubles</title>
 </head>
 <body>
@@ -37,18 +37,28 @@
       <form class="challenger">
         <p class="current-range">The Current Range is <span id="current-min" class="bold-min-value">1</span> to <span id="current-max" class="bold-max-value">100</span></p>
         <h3 class="challenger-1">Challenger 1</h3>
+        <fieldset class="challenger-fieldset">
         <p>Name</p>
         <input class="user-input" id="name-1" type="text">
+        </fieldset>
+        <fieldset class="challenger-fieldset">
         <p>Guess</p>
         <input class="user-input" id="name-1-guess" type="number">
+        </fieldset>
         <h3 class="challenger-2">Challenger 2</h3>
+        <fieldset class="challenger-fieldset">
         <p>Name</p>
         <input class="user-input" id="name-2" type="text">
+        </fieldset>
+        <fieldset class="challenger-fieldset">
         <p>Guess</p>
         <input class="user-input" id="name-2-guess" type="number">
+        </fieldset>
+        <div class="challenger-buttons">
         <button id="submit-guess">SUBMIT GUESS</button>
         <button id="reset-game" disabled>RESET GAME</button>
         <button id="clear-game" disabled>CLEAR GAME</button>
+        </div>
       </form>
       <article class="latest-score">
         <h3>Latest Score</h3>
