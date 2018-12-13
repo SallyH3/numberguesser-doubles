@@ -1,9 +1,7 @@
 # Project Title
 ---
-
 NumberGuesser Doubles
 ---
-
 As a partner project, we had to build a game where two users can guess a number between 1 and 100, with the ability for the user to add custom ranges for increased difficulty of play.
 The game needed to provide the following:
 1. display the current guess of both players
@@ -16,7 +14,6 @@ The game needed to provide the following:
 
 ## Built With
 ---
-
 * HTML
 * CSS (FlexBox utilized)
 * Vanilla JavaScript
@@ -24,15 +21,13 @@ The game needed to provide the following:
 
 ## Motivation
 ---
-
 We were motivated to learn JavaScript while simultaneously learning CSS. It was helpful to work side by side with 
 someone and pair with others within the Turing program. This collaboration style helped us grow as developers and notice each other's strengths and challenges 
 throughout the process. 
 
 ## Authors
 ---
-
-* **Sally Haefling and Kim Myers
+***Sally Haefling and Kim Myers
 
 
 *** Turing Spec(desktop):
