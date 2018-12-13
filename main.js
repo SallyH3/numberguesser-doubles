@@ -48,7 +48,6 @@ updateButton.addEventListener('click', function(e) {
   updateRandomNumber();
   checkInputIsNanMinRange(e);
   checkInputIsNanMaxRange(e);
-  //replace min/max range inputs into the functions above
 });
 
 
@@ -78,7 +77,7 @@ function checkInputIsNanMinRange(e) {
 var parsedValue = parseInt(minRangeInputBox.value);
   if (isNaN(parsedValue)) {
     document.querySelector('.pink-error-message').innerHTML= 'that\'s not a number, try again';
-}
+  }
 }
 
 function checkInputIsNanMaxRange(e) {
@@ -86,21 +85,21 @@ function checkInputIsNanMaxRange(e) {
 var parsedValue = parseInt(maxRangeInputBox.value);
   if (isNaN(parsedValue)) {
     document.querySelector('.pink-error-message').innerHTML = 'that\'s not a number, try again';
-}
+  }
 }
 
 function checkInputIsNanChallengerOne() {
   var parsedValue = parseInt(nameOneGuessInputBox.value);
   if (isNaN(parsedValue)) {
     challenger1Feedback.innerText = 'that\'s not a number, try again';
-}
+  }
 }
 
 function checkInputIsNanChallengerTwo() {
   var parsedValue = parseInt(nameTwoGuessInputBox.value);
   if (isNaN(parsedValue)) {
     challenger2Feedback.innerText = 'that\'s not a number, try again';
-}
+  }
 }
 
 function resetClearButtonEnableDisable() {
@@ -201,9 +200,6 @@ function submitGuessPlayerTwo(e) {
    function minMaxErrorMessage() {
     if (maxRange < minRange) {
       document.querySelector('.pink-error-message').innerHTML = `<img src="error-icon.svg"> Max entry is lower than min entry, try again`;
-      //put icon here with innerHTML
-      //remove hidden class here so that it shows the error text
-      //when not error message, add hidden class, for lines 171 and 172 --> with classList add or remove
       addPinkBorder(minRangeInputBox);
       addPinkBorder(maxRangeInputBox);
       return false;
@@ -213,10 +209,7 @@ function submitGuessPlayerTwo(e) {
       removePinkBorder(maxRangeInputBox);
       return true;
     }
-
  }
-
- //move the error feedback below min and max input fields
 
  function addWinnerCard(winner) {
   var element = document.createElement('section');
@@ -246,92 +239,8 @@ function submitGuessPlayerTwo(e) {
     <i class="fas fa-times-circle"></i>
     </span>
     </div>
-    </div>
+    </div>  
     `;
     guessCount = 0;
     document.querySelector('.right-column').appendChild(element);
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function outsideRangeError(e) {
-//   e.preventDefault();
-//   if (nameOneGuess.value < minRange.value || nameOneGuess.value > maxRange.value) {
-//     console.log('name1guess', nameOneGuess.value);
-//     console.log('chall1feedback', challenger1Feedback);
-//     challenger1Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
-// } else {
-//   submitGuessPlayerOne(e);
-// }
-// }
-
-// function submitGuessPlayerOne(e) {
-//   e.preventDefault();
-//   latestScoreNum1.innerText = nameOneGuess.value;
-//   if (nameOneGuess.value == randomNumber) {
-//     challenger1Feedback.innerText = 'BOOM!';
-//   } else if (nameOneGuess.value < randomNumber && nameOneGuess >= minRange.value) {
-//     challenger1Feedback.innerText = 'That\'s too low'; 
-// } else if (nameOneGuess.value > randomNumber && nameOneGuess<= maxRange.value) {
-//     challenger1Feedback.innerText = 'That\'s too high';
-//     } 
-// }
-
-
-
-
-
-//when you click the submit
-
-// function submitGuessPlayerTwo(e) {
-//   e.preventDefault();
-//   latestScoreNum2.innerText = nameTwoGuess.value;
-//   if (nameTwoGuess.value == randomNumber) {
-//     challenger2Feedback.innerText = 'BOOM!';
-//     } else if (nameTwoGuess.value < minRange.value || nameTwoGuess.value > maxRange.value) {
-//     challenger2Feedback.innerText = 'Sorry, that\'s outside the range you set, try again';
-//   } else if (nameTwoGuess.value < randomNumber) {
-//     challenger2Feedback.innerText = 'That\'s too low'; 
-//   } else if (nameTwoGuess.value > randomNumber){
-//     challenger2Feedback.innerText = 'That\'s too high';
-// }
-// }
