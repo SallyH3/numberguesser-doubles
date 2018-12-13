@@ -1,6 +1,6 @@
-# Project Title
+## Project Title
 ---
-NumberGuesser Doubles
+# NumberGuesser Doubles
 ---
 As a partner project, we had to build a game where two users can guess a number between 1 and 100, with the ability for the user to add custom ranges for increased difficulty of play.
 The game needed to provide the following:
