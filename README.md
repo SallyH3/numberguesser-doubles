@@ -39,9 +39,11 @@ Turing Spec(desktop):
 
 Our Project(desktop):
 ---
+![ng-screenshot-desktop](https://user-images.githubusercontent.com/40863560/49913339-8956c400-fe4a-11e8-85b8-bfd50e2108c5.png)
+
 
 Our Project(mobile):
 ---
-
+![mobile-ng](https://user-images.githubusercontent.com/40863560/49913305-6cba8c00-fe4a-11e8-8505-297999b379ec.png)
 
 
