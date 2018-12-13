@@ -223,7 +223,6 @@ border-left: 2px solid #D0D2D3;
 .right-column {
   background-color: #D1D2D4;
   border-left: 2px solid #B4B4B4;
-  padding: 20px;
   text-align: center;
   width: 100%;
 }
@@ -325,7 +324,7 @@ border-left: 2px solid #D0D2D3;
   #clear-game {
     width: 525px;
     margin-top: 10px;
-}
+  }
 }
 
 @media screen and (max-width: 610px) {
