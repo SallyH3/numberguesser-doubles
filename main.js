@@ -239,7 +239,7 @@ function submitGuessPlayerTwo(e) {
     <i class="fas fa-times-circle"></i>
     </span>
     </div>
-    </div>
+    </div>  
     `;
     guessCount = 0;
     document.querySelector('.right-column').appendChild(element);
