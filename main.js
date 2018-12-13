@@ -54,6 +54,11 @@ updateButton.addEventListener('click', function(e) {
 
 //FUNCTIONS
 
+function increaseDecreaseByTen() {
+  minRangeInputBox.value = ((parseInt(minRangeInputBox.value)) -10);
+  maxRangeInputBox.value = ((parseInt(maxRangeInputBox.value)) +10);
+}
+
 function deleteWinnerCard(e) {
   if(e.target.classList.contains('fas')) {
     e.target.closest('.winner-card').remove();
@@ -161,6 +166,7 @@ function submitGuessPlayerOne(e) {
     challenger1Feedback.innerText = 'that\'s too low';
   } else if (nameOneGuess === randomNumber) {
     challenger1Feedback.innerText = 'BOOM!';
+    increaseDecreaseByTen();
     addWinnerCard(name1.value);
       }
    }
@@ -175,6 +181,7 @@ function submitGuessPlayerTwo(e) {
     challenger2Feedback.innerText = 'that\'s too low';
   } else if (nameTwoGuess === randomNumber) {
     challenger2Feedback.innerText = 'BOOM!';
+    increaseDecreaseByTen();
     addWinnerCard(name2.value);
       }
    }
