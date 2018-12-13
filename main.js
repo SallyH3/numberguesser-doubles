@@ -222,7 +222,8 @@ function submitGuessPlayerTwo(e) {
   var element = document.createElement('section');
   var challengerOneName = name1.value.toUpperCase();
   var challengerTwoName = name2.value.toUpperCase();
-  element.className = 'winner-card';
+  var winner = winner.toUpperCase();    
+  element.className = 'winner-card'; 
     element.innerHTML =
     `<div class="challenger-card-names">
     <p class="chall-one-name">${challengerOneName}</p>
