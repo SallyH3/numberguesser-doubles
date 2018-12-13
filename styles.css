@@ -285,7 +285,47 @@ border-left: 2px solid #D0D2D3;
 }
 
 .delete-icon {
-  /*color: #6E6E6E;*/
   font-size: 20px;
   margin-left: 262px;
 }
+
+@media screen and (max-width: 1580px) {
+  #update {
+    margin-left: -3px;
+    margin-top: 20px;
+  }
+
+@media screen and (max-width: 1191px) {
+  #update {
+    margin-left: -3px;
+    margin-top: 20px;
+  }
+  #min-range,
+  #max-range {
+    margin-right: -5px;
+    width: 485px;
+  }
+}
+}
+
+@media screen and (max-width: 1551px) {
+  #name-1,
+  #name-2 {
+    width: 525px;
+  }
+  #name-1-guess,
+  #name-2-guess {
+    width: 525px;
+    margin-left: -1px;
+  }
+}
+
+@media screen and (max-width: 618px) {
+  #submit-guess,
+  #reset-game,
+  #clear-game {
+    width: 525px;
+    margin-top: 10px;
+  }
+}
+
