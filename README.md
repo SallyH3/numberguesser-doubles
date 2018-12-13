@@ -27,20 +27,20 @@ throughout the process.
 
 ## Authors
 ---
-***Sally Haefling and Kim Myers
+Sally Haefling and Kim Myers
 
 
-*** Turing Spec(desktop):
+Turing Spec(desktop):
 ---
 
 ![ng-spec-desktop-1](https://user-images.githubusercontent.com/40863560/49910276-522ee580-fe3f-11e8-81c3-19cf7b7a7851.png)
 
 ![turing-spec-desktop-2](https://user-images.githubusercontent.com/40863560/49910321-7a1e4900-fe3f-11e8-94ca-d11011d7c3f9.png)
 
-*** Our Project(desktop):
+Our Project(desktop):
 ---
 
-*** Our Project(mobile):
+Our Project(mobile):
 ---
 
 
