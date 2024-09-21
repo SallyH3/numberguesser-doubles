@@ -27,7 +27,7 @@ throughout the process.
 
 ## Authors
 ---
-Sally H and Kim Myers
+Sally Skarr and Kim Myers
 
 
 Turing Spec(desktop):
